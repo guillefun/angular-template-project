@@ -1,11 +1,11 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import {  GitHubService  } from './services/github.service';
+import { ExampleService } from './services/example/example.service';
 
 @NgModule({
   imports: [
   ],
   providers: [
-   // ExampleService
+   ExampleService
   ],
   declarations: []
 })

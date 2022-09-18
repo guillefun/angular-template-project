@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(private exampleService: ExampleService): void {
+    console.log(this.exampleService.getExample());
   }
 
 }
