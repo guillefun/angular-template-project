@@ -5,8 +5,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { MaterialModule } from './material.module';
+import { CustomDatePipe } from '../shared/pipes/date.pipe';
 
 @NgModule({
+  declarations: [ CustomDatePipe ],
   imports: [
     CommonModule,
     MaterialModule,
@@ -21,6 +23,7 @@ import { MaterialModule } from './material.module';
     TranslateModule,
     ReactiveFormsModule,
     FormsModule,
+    CustomDatePipe
   ],
 })
 export class SharedModule {}

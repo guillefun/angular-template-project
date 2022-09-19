@@ -10,7 +10,6 @@ import { ExampleService } from './services/example/example.service';
   declarations: []
 })
 
-@NgModule({})
 export class CoreModule {
 
   constructor(@Optional() @SkipSelf() core:CoreModule ){
