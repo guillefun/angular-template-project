@@ -6,9 +6,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MaterialModule } from './material.module';
 import { CustomDatePipe } from '../shared/pipes/date.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
-  declarations: [ CustomDatePipe ],
+  declarations: [ CustomDatePipe, ModalComponent ],
   imports: [
     CommonModule,
     MaterialModule,

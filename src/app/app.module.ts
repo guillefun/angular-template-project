@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './shared/layout/layout/layout.component';
 import { CoreModule } from './core/core.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 
@@ -19,6 +19,7 @@ registerLocaleData(es);
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule
   ],
