@@ -10,11 +10,13 @@ import { DialogData } from '../../../core/models/dialog-data.model';
 export class ModalComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.dialogRef.keydownEvents().subscribe((event) => {
       if (event.key === 'Escape') {
         this.dialogRef.close();
+      }else if(event.key === 'Enter'){
+        this.dialogRef.close(data.result);
       }
     });
   }
@@ -27,7 +29,7 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  onClick(action: any) {
-    this.dialogRef.close(action);
+  onCancel(): void {
+    this.dialogRef.close();
   }
 }

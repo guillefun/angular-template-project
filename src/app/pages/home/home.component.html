@@ -1,3 +1,4 @@
 <p>Username: {{ user.username }}, Password: {{ user.password }}, Locale: {{ user.locale }}</p>
 <p> Date: {{ date | date: user.locale: 'dd-MM-yyyy HH:mm:ss.' }}</p>
 <button (click)="openModal()">Open test</button>
+<p> {{ modalResult }}</p>

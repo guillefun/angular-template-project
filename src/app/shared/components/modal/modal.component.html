@@ -1,23 +1,13 @@
-<div mat-dialog-title class="mat-dialog-title">
-  <span class="mat-dialog-title-text aligned-text">{{ data.title }}</span>
+
+<h1 mat-dialog-title>Welcome user</h1>
+<div mat-dialog-content>
+  <p>How do you feel?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.result">
+  </mat-form-field>
 </div>
-<div mat-dialog-content>{{ data.message }}</div>
-<div class="mt-4">
-  <ng-container *ngIf="data?.extraInformation">
-    <ng-container *ngFor="let item of data.extraInformation">
-      <div class="py-2 d-flex justify-content-between data-modal">
-        <span class="mr-2">{{ item.text }}</span>
-        <span>{{ item.value }}</span>
-      </div>
-    </ng-container>
-  </ng-container>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.result" 
+             cdkFocusInitial>Ok</button>
 </div>
-<ng-container *ngIf="data?.buttons">
-  <div mat-dialog-actions class="d-flex justify-content-end mt-4 mb-0 p-0">
-    <span *ngFor="let button of data.buttons">
-      <button cir-button (click)="onClick(button.type.action)">
-        {{ button.type.label | translate }}>
-      </button>
-    </span>
-  </div>
-</ng-container>

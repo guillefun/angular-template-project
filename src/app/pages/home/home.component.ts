@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   user: User;
   date: Date = new Date();
-
+  modalResult: any;
+  
   constructor(
     private exampleService: ExampleService,
     private dialog: MatDialog,
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   openModal(){
-    const emailHasBeenSent: MatDialogRef<ModalComponent> = this.dialog.open(ModalComponent, {
+    const dialogRef: MatDialogRef<ModalComponent> = this.dialog.open(ModalComponent, {
       data: {
         title: "Testing modal",
         /* eslint-disable max-len */
@@ -33,9 +34,9 @@ export class HomeComponent implements OnInit {
         buttons: [],
       },
     });
-    setTimeout(() => {
-      emailHasBeenSent.close();
-    }, 6000);
+    dialogRef.afterClosed().subscribe(result => {
+      this.modalResult = result;
+    });
   }
 
 }
